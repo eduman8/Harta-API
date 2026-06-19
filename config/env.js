@@ -23,7 +23,9 @@ const env = {
     .split(",")
     .map((email) => email.trim().toLowerCase())
     .filter(Boolean),
-  ADMIN_EMAILS: (process.env.ADMIN_EMAILS || "eduman.000@gmail.com")
+  ADMIN_EMAILS: (
+    process.env.ADMIN_EMAILS || "eduman.000@gmail.com,malena.arballo1@gmail.com"
+  )
     .split(",")
     .map((email) => email.trim().toLowerCase())
     .filter(Boolean),

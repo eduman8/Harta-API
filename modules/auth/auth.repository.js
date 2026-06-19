@@ -27,16 +27,17 @@ const createAuthRepository = (pool) => ({
     return result.rows[0];
   },
 
-  updateGoogleData: async (userId, { googleId, email, name, picture }) => {
+  updateGoogleData: async (userId, { googleId, email, name, picture, role }) => {
     const result = await pool.query(
       `UPDATE users
        SET google_id = COALESCE($1, google_id),
            email = COALESCE($2, email),
            name = COALESCE($3, name),
-           picture = COALESCE($4, picture)
-       WHERE id = $5
+           picture = COALESCE($4, picture),
+           role = CASE WHEN $5 = 'admin' THEN 'admin' ELSE role END
+       WHERE id = $6
        RETURNING *`,
-      [googleId, email, name, picture, userId],
+      [googleId, email, name, picture, role, userId],
     );
 
     return result.rows[0] || null;

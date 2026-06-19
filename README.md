@@ -16,10 +16,12 @@ MP_ACCESS_TOKEN=APP_USR-tu-token-acá
 RESEND_API_KEY=re_tu_api_key
 EMAIL_FROM=onboarding@resend.dev
 EMAIL_ADMIN_TO=ventas@tu-tienda.com,owner@tu-tienda.com
+ADMIN_EMAILS=eduman.000@gmail.com,malena.arballo1@gmail.com
 ```
 
 > El token de prueba suele empezar con `TEST-` y el de producción con `APP_USR-`.
 > Para emails transaccionales se usa Resend y `EMAIL_FROM` debe estar verificado en tu cuenta.
+> Los administradores se definen con `ADMIN_EMAILS`, separado por comas. Si esta variable existe en tu entorno, agregá `malena.arballo1@gmail.com` sin borrar los administradores actuales. Si no existe, el backend usa por defecto `eduman.000@gmail.com,malena.arballo1@gmail.com`.
 
 ## 2) ¿Dónde obtener el access token?
 
