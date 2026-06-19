@@ -9,6 +9,8 @@ const getMercadoPagoAccessToken = () => {
 };
 
 const env = {
+  DATABASE_URL: process.env.DATABASE_URL || "",
+  
   MP_ACCESS_TOKEN: getMercadoPagoAccessToken(),
   PORT: Number(process.env.PORT || 3000),
   FRONTEND_BASE_URL: process.env.FRONTEND_BASE_URL || "http://localhost:5173",
